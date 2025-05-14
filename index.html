@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenamiento Pokémon - Método de Burbuja</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PokéOrdenamiento</h1>
+            <p class="subtitle">Aprende programación con Pokémon</p>
+        </header>
+
+        <!-- Sección 1: Introducción -->
+        <section id="intro-section" class="active-section">
+            <div class="pokeball"></div>
+            <h2>¡Hola Entrenador!</h2>
+            <p>¿Quieres aprender conceptos básicos de programación usando Pokémon?</p>
+            <div class="button-group">
+                <button data-section="basics-section" class="btn-yes">¡Sí, vamos a aprender!</button>
+            </div>
+        </section>
+
+        <!-- Sección 2: Conceptos Básicos -->
+        <section id="basics-section" class="hidden-section">
+            <h2>Conceptos Básicos de Programación</h2>
+            
+            <div class="concept-container">
+                <div class="concept">
+                    <h3>Vectores (Arrays)</h3>
+                    <div class="info-card">
+                        <p>Un vector es una estructura que almacena múltiples elementos del mismo tipo.</p>
+                        <div class="code-example">
+                            <pre>
+let pokemons = [
+    {id: 1, name: "Bulbasaur"},
+    {id: 4, name: "Charmander"},
+    {id: 7, name: "Squirtle"}
+];</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Condicionales (if)</h3>
+                    <div class="info-card">
+                        <p>Los condicionales nos permiten tomar decisiones en nuestro código.</p>
+                        <div class="code-example">
+                            <pre>
+if (pokemon1.id > pokemon2.id) {
+    // Intercambiar posiciones
+}</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Bucles (for)</h3>
+                    <div class="info-card">
+                        <p>Los bucles nos permiten repetir acciones múltiples veces.</p>
+                        <div class="code-example">
+                            <pre>
+for (let i = 0; i < pokemons.length; i++) {
+    // Procesar cada Pokémon
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button data-section="bubble-section" class="btn-next">Aprender Método de Burbuja</button>
+        </section>
+
+        <!-- Sección 3: Método de Burbuja -->
+        <section id="bubble-section" class="hidden-section">
+            <h2>El Método de Burbuja</h2>
+            <div class="info-card">
+                <p>El método de burbuja es un algoritmo simple que ordena elementos comparando pares adyacentes e intercambiándolos si están en el orden incorrecto.</p>
+                <div class="code-example">
+                    <pre>
+function bubbleSort(pokemons) {
+    for (let i = 0; i < pokemons.length - 1; i++) {
+        for (let j = 0; j < pokemons.length - i - 1; j++) {
+            if (pokemons[j].id > pokemons[j + 1].id) {
+                // Intercambiar posiciones
+                let temp = pokemons[j];
+                pokemons[j] = pokemons[j + 1];
+                pokemons[j + 1] = temp;
+            }
+        }
+    }
+}</pre>
+                </div>
+            </div>
+
+            <div class="visual-example">
+                <h3>¡Practiquemos con Pokémon!</h3>
+                <div id="learn-pokemon-list" class="pokemon-list"></div>
+                <button data-action="demonstrate" class="btn-action">Mostrar Paso</button>
+                <div id="explanation" class="explanation-box"></div>
+            </div>
+
+            <button data-section="practice-section" class="btn-next">Practicar</button>
+            <button data-section="basics-section" class="btn-back">Volver a Conceptos</button>
+        </section>
+
+        <!-- Sección 4: Práctica -->
+        <section id="practice-section" class="hidden-section">
+            <h2>¡Tu Turno de Practicar!</h2>
+            <p>Ordena estos Pokémon usando el método de burbuja:</p>
+            
+            <div class="practice-container">
+                <div id="practice-list" class="pokemon-list"></div>
+                <div class="controls">
+                    <button data-action="swap" class="btn-swap">Intercambiar Seleccionados</button>
+                    <button data-action="check" class="btn-check">Verificar Orden</button>
+                    <button data-action="reset" class="btn-reset">Reiniciar</button>
+                </div>
+                <div id="feedback" class="feedback-box"></div>
+            </div>
+            
+            <button data-section="bubble-section" class="btn-back">Volver a la Lección</button>
+            <button data-section="quiz-section" class="btn-next">Quiz</button>
+        </section>
+
+        <!-- Sección 5: Quiz -->
+        <section id="quiz-section" class="hidden-section">
+            <h2>¡Pon a prueba tu conocimiento!</h2>
+            
+            <div id="quiz-container">
+                <div class="quiz-question">
+                    <p>1. ¿Qué estructura de datos usamos para almacenar múltiples Pokémon?</p>
+                    <div class="quiz-options">
+                        <button data-quiz="1" data-answer="a" class="quiz-option">a) Vector (Array)</button>
+                        <button data-quiz="1" data-answer="b" class="quiz-option">b) Variable simple</button>
+                        <button data-quiz="1" data-answer="c" class="quiz-option">c) Constante</button>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p>2. ¿Qué estructura usamos para comparar los números de los Pokémon?</p>
+                    <div class="quiz-options">
+                        <button data-quiz="2" data-answer="a" class="quiz-option">a) Bucle for</button>
+                        <button data-quiz="2" data-answer="b" class="quiz-option">b) Condicional if</button>
+                        <button data-quiz="2" data-answer="c" class="quiz-option">c) Función</button>
+                    </div>
+                </div>
+                
+                <div id="quiz-feedback" class="feedback-box"></div>
+                <button data-section="intro-section" class="btn-complete">¡Completar Aprendizaje!</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/pokemon-data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
