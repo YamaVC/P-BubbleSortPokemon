@@ -30,16 +30,92 @@
             
             <div class="concept-container">
                 <div class="concept">
-                    <h3>Vectores (Arrays)</h3>
+                    <h3>Variables</h3>
                     <div class="info-card">
-                        <p>Un vector es una estructura que almacena múltiples elementos del mismo tipo.</p>
+                        <p>Las variables son como cajas donde guardamos información que podemos usar después.</p>
                         <div class="code-example">
                             <pre>
-let pokemons = [
-    {id: 1, name: "Bulbasaur"},
-    {id: 4, name: "Charmander"},
-    {id: 7, name: "Squirtle"}
+// Ejemplo de variables con Pokémon
+let nombrePokemon = "Pikachu";
+let nivelPokemon = 25;
+let esEvolucionado = false;</pre>
+                        </div>
+                        <div class="step-list">
+                            <p>En este ejemplo:</p>
+                            <ol>
+                                <li>Creamos una variable para el nombre del Pokémon</li>
+                                <li>Guardamos su nivel en otra variable</li>
+                                <li>Usamos una variable booleana para saber si está evolucionado</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Vectores (Arrays)</h3>
+                    <div class="info-card">
+                        <p>Un vector es como una lista ordenada donde guardamos varios elementos del mismo tipo.</p>
+                        <div class="code-example">
+                            <pre>
+// Lista de Pokémon iniciales
+let pokemonsIniciales = [
+    "Bulbasaur",
+    "Charmander",
+    "Squirtle"
 ];</pre>
+                        </div>
+                        <div class="step-list">
+                            <p>En este ejemplo:</p>
+                            <ol>
+                                <li>Creamos una lista llamada pokemonsIniciales</li>
+                                <li>Guardamos los nombres de los tres Pokémon iniciales</li>
+                                <li>Cada Pokémon está en una posición específica (0, 1, 2)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Bucles (Loops)</h3>
+                    <div class="info-card">
+                        <p>Los bucles nos permiten repetir una acción varias veces, como revisar cada Pokémon en nuestra lista.</p>
+                        <div class="code-example">
+                            <pre>
+// Revisar cada Pokémon en la lista
+for (let i = 0; i < pokemonsIniciales.length; i++) {
+    console.log("Pokémon número " + i + ": " + pokemonsIniciales[i]);
+}</pre>
+                        </div>
+                        <div class="step-list">
+                            <p>En este ejemplo:</p>
+                            <ol>
+                                <li>El bucle comienza en 0 (i = 0)</li>
+                                <li>Se repite mientras i sea menor que la cantidad de Pokémon</li>
+                                <li>En cada vuelta, muestra el número y nombre del Pokémon</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept">
+                    <h3>Valor Temporal</h3>
+                    <div class="info-card">
+                        <p>Un valor temporal es como una caja temporal donde guardamos algo mientras hacemos un intercambio.</p>
+                        <div class="code-example">
+                            <pre>
+// Intercambiar dos Pokémon de lugar
+let temp = pokemonsIniciales[0];           
+pokemonsIniciales[0] = pokemonsIniciales[1]; 
+pokemonsIniciales[1] = temp;               
+</pre>
+                        </div>
+                        <div class="step-list">
+                            <p>En este ejemplo:</p>
+                            <ol>
+                                <li>Guardamos temporalmente el primer Pokémon</li>
+                                <li>Movemos el segundo Pokémon al primer lugar</li>
+                                <li>Movemos el Pokémon guardado al segundo lugar</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -47,25 +123,26 @@ let pokemons = [
                 <div class="concept">
                     <h3>Condicionales (if)</h3>
                     <div class="info-card">
-                        <p>Los condicionales nos permiten tomar decisiones en nuestro código.</p>
+                        <p>Los condicionales nos permiten tomar decisiones, como verificar si un Pokémon es más fuerte que otro.</p>
                         <div class="code-example">
                             <pre>
-if (pokemon1.id > pokemon2.id) {
-    // Intercambiar posiciones
+// Comparar niveles de Pokémon
+let nivelPikachu = 25;
+let nivelRaichu = 30;
+
+if (nivelPikachu < nivelRaichu) {
+    console.log("¡Raichu es más fuerte!");
+} else {
+    console.log("¡Pikachu es más fuerte!");
 }</pre>
                         </div>
-                    </div>
-                </div>
-
-                <div class="concept">
-                    <h3>Bucles (for)</h3>
-                    <div class="info-card">
-                        <p>Los bucles nos permiten repetir acciones múltiples veces.</p>
-                        <div class="code-example">
-                            <pre>
-for (let i = 0; i < pokemons.length; i++) {
-    // Procesar cada Pokémon
-}</pre>
+                        <div class="step-list">
+                            <p>En este ejemplo:</p>
+                            <ol>
+                                <li>Definimos los niveles de dos Pokémon</li>
+                                <li>Comparamos si el nivel de Pikachu es menor que el de Raichu</li>
+                                <li>Mostramos un mensaje diferente según el resultado</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -151,9 +228,6 @@ function bubbleSort(pokemons) {
                 
                 <div id="quiz-feedback" class="feedback-box"></div>
                 <button data-section="intro-section" class="btn-complete">¡Completar Aprendizaje!</button>
-            </div>
-        </section>
-    </div>
 
     <script src="js/pokemon-data.js"></script>
     <script src="js/script.js"></script>
